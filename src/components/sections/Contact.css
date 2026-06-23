@@ -1,0 +1,65 @@
+.contact__heading {
+  color: var(--text);
+  margin: 1.5rem 0 3.5rem;
+}
+
+.accent-italic {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.contact__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+}
+
+.contact__link {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.contact__link:hover {
+  color: var(--accent);
+}
+
+.contact__link-label {
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.contact__link-display {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.contact__link:hover .contact__link-display {
+  color: var(--accent);
+}
+
+.contact__arrow {
+  margin-left: auto;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact__link:hover .contact__arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact__footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}

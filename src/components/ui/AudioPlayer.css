@@ -1,0 +1,65 @@
+/* --- Audio widget ------------------------------------------------------- */
+.audio-player {
+  position: fixed;
+  bottom: 2rem;
+  right: clamp(1.5rem, 7vw, 8rem);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* OFF state: dim, recessed */
+.audio-player--off {
+  background: rgba(13, 13, 13, 0.75);
+  border: 1px solid rgba(240, 240, 238, 0.1);
+  color: rgba(136, 136, 136, 0.7);
+  box-shadow: none;
+}
+.audio-player--off:hover {
+  border-color: rgba(240, 240, 238, 0.25);
+  background: rgba(20, 20, 20, 0.9);
+  color: var(--text-muted);
+}
+
+/* ON state: lit up with cyan */
+.audio-player--on {
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.55);
+  color: var(--accent);
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.18);
+}
+.audio-player--on:hover {
+  background: rgba(6, 182, 212, 0.14);
+  box-shadow: 0 0 22px rgba(6, 182, 212, 0.28);
+}
+
+/* -- EQ bars (ON state) -------------------------------------------------- */
+.audio-bar {
+  display: block;
+  width: 2.5px;
+  border-radius: 2px;
+  background: currentColor;
+  transform-origin: center;
+}
+
+.audio-bar:nth-child(1) { height: 5px; }
+.audio-bar:nth-child(2) { height: 11px; }
+.audio-bar:nth-child(3) { height: 7px; }
+.audio-bar:nth-child(4) { height: 4px; }
+
+.audio-player--on .audio-bar {
+  animation: bar-bounce 0.88s ease-in-out infinite alternate;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes bar-bounce {
+  0%   { transform: scaleY(0.25); }
+  100% { transform: scaleY(1.9); }
+}

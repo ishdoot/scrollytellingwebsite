@@ -1,0 +1,50 @@
+.resume {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  min-height: 60dvh;
+  justify-content: center;
+}
+
+.resume__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+}
+
+.resume__inner .t-heading {
+  color: var(--text);
+}
+
+.accent-italic {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.resume__sub {
+  max-width: 44ch;
+}
+
+.resume__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  border: 1px solid var(--accent);
+  border-radius: 100px;
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background 0.25s ease, color 0.25s ease;
+  width: fit-content;
+}
+
+.resume__btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}

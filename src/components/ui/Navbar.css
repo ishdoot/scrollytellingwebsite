@@ -1,0 +1,137 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem clamp(1.5rem, 7vw, 8rem);
+  transition: background 0.4s ease, backdrop-filter 0.4s ease,
+              border-color 0.4s ease;
+}
+
+.navbar--scrolled {
+  background: rgba(13, 13, 13, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Logo ── */
+.navbar__logo {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  font-weight: 400;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+.navbar__logo:hover {
+  color: var(--accent);
+}
+
+/* ── Nav list ── */
+.navbar__nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+/* Each nav item: dot + label */
+.navbar__item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.75rem;
+  border-radius: 100px;
+  color: var(--text-muted);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar__item:hover {
+  background: var(--accent-dim);
+  color: var(--text);
+}
+
+.navbar__item--active {
+  color: var(--text);
+}
+
+/* Dot inside each nav item */
+.navbar__dot {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+  opacity: 0.45;
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.navbar__item--active .navbar__dot {
+  background: var(--accent);
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.navbar__item:hover .navbar__dot {
+  opacity: 1;
+}
+
+/* Label */
+.navbar__label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ── Résumé button ── */
+.navbar__resume {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.navbar__resume:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* ── Responsive: collapse labels on narrow screens ── */
+@media (max-width: 768px) {
+  .navbar__label {
+    display: none;
+  }
+
+  .navbar__item {
+    padding: 0.5rem;
+  }
+
+  .navbar__resume span {
+    display: none;
+  }
+
+  .navbar__resume {
+    padding: 0.5rem 0.6rem;
+  }
+}
+

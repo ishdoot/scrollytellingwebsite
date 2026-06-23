@@ -1,0 +1,46 @@
+.hero {
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero__name {
+  margin-bottom: 2rem;
+  /* override h1 browser margin */
+  font-size: inherit;
+}
+
+.hero__line {
+  overflow: hidden;
+  display: block;
+}
+
+.hero__line--indent {
+  padding-left: clamp(3rem, 10vw, 12rem);
+}
+
+.hero__tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.hero__meta {
+  margin-top: 0;
+}
+
+.hero__indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: clamp(1.5rem, 7vw, 8rem);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-muted);
+}
